@@ -202,6 +202,7 @@
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Posts\My.cshtml" />
+    <Content Include="Views\Account\EditPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

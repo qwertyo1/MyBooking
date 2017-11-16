@@ -10,11 +10,6 @@ namespace MyBooking.Controllers
 {
     public class AccountController : Controller
     {
-        public ActionResult Login()
-        {
-            return View();
-        }
-
         public ActionResult Index(string username)
         {
             User user = null;
@@ -24,6 +19,43 @@ namespace MyBooking.Controllers
                 user = db.Users.FirstOrDefault(u => u.Email == username);
             }
             return View(user);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPassword(User model)
+        {
+            if (ModelState.IsValid)
+            {
+                // поиск пользователя в бд
+                User user = null;
+                using (UserContext db = new UserContext())
+                {
+                    user = db.Users.FirstOrDefault(u => u.Id == model.Id);
+                    if (user != null)
+                    {
+                        user.Password = model.Password;
+                        db.SaveChanges();
+                        return RedirectToAction("Index", "Account");
+                    }
+                }
+            }
+            return View(model);
+        }
+
+        public ActionResult EditPassword(string username)
+        {
+            User user = null;
+            using (UserContext db = new UserContext())
+            {
+                user = db.Users.FirstOrDefault(u => u.Email == username);
+            }
+            return View(user);
+        }
+
+        public ActionResult Login()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -41,14 +73,13 @@ namespace MyBooking.Controllers
                 if (user != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Name, true);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Posts");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Пользователя с таким логином и паролем нет");
                 }
             }
-
             return View(model);
         }
 
@@ -81,7 +112,7 @@ namespace MyBooking.Controllers
                     if (user != null)
                     {
                         FormsAuthentication.SetAuthCookie(model.Name, true);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Posts");
                     }
                 }
                 else
@@ -95,7 +126,7 @@ namespace MyBooking.Controllers
         public ActionResult Logoff()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Posts");
         }
     }
 }

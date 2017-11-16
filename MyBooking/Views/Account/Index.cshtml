@@ -9,6 +9,8 @@
 <div>
     <h4>User</h4>
     <hr />
+    @if (Model != null)
+    {
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Id)
@@ -40,9 +42,13 @@
         <dd>
             @Html.DisplayFor(model => model.Age)
         </dd>
-
+        <p>
+            @Html.ActionLink("Edit password", "EditPassword")
+        </p>
     </dl>
+    }
+    else
+    {
+        <text>The user is not found</text>
+}
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -50,3 +50,4 @@ C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\ru\System.Web.WebPages.Razor
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csproj.CoreCompileInputs.cache
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.dll
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.pdb
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csprojResolveAssemblyReference.cache

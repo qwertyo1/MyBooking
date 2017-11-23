@@ -5,57 +5,53 @@
 }
 
 <h2>Advertisements</h2>
+<br /><br />
+    @Html.ActionLink("Create New", "Create", null, new { @class = "searchBox__button" })
+    <form asp-action="Index" class="searchBox">
+        
+        <input type="text" name="searchStr" class="serachBox__edit">
+        <input type="submit" value="Filter" class="searchBox__button" />
+    </form>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </th>
-        <!--
-        <th></th>
-        -->
-        </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreationDate)
-        </td>
-        <!--
+@foreach (var item in Model)
+{
+    <div class="post">
+        <div class="post__picture">
+            <div class="post__imageBox">
+                @if (item.Image != null)
+                {
+                    @Html.Raw("<img src =\"data:image/jpeg;base64," + Convert.ToBase64String(item.Image) + "\" />")
+                }
+                else
+                {
+                    <img src="~/Images/noImage.jpeg" />
+                }
+            </div>
+        </div>
+        <div class="post__description">
+            <div class="post__name">
+                @Html.DisplayFor(modelItem => item.Name)
+            </div>
+            <div class="post__content">
+                @Html.DisplayFor(modelItem => item.Content)
+            </div>
+            <div class="post__username">
+                 Published by @Html.DisplayFor(modelItem => item.UserName)
+            </div>
+            <div class="post__date">
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </div>
+            <div class="post__price">
+                @Html.DisplayFor(modelItem => item.Price)
+            </div>
+        </div>
+            <!--
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         -->
-    </tr>
-}
 
-</table>
+        </div>
+}

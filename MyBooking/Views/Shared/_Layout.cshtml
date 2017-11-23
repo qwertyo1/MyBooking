@@ -9,31 +9,22 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Booking", "Index", "Posts", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Your login is " + User.Identity.Name, "Index", "Account", new { username = User.Identity.Name }, null)</li>
-                        <li>@Html.ActionLink("Sign out", "logoff", "Account")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Sign in", "login", "Account")</li>
-                        <li>@Html.ActionLink("Sign up", "register", "Account")</li>
-                    }
-                </ul>
-            </div>
-        </div>
+    <div class="header">
+        <span class="header__title">
+            @Html.ActionLink("Booking", "Index", "Posts")
+        </span>
+        <span class="header__account">
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Your login is " + User.Identity.Name, "Index", "Account", new { username = User.Identity.Name },new { @class = "header__account-item" })
+                @Html.ActionLink("Sign out", "logoff", "Account", new { @class = "header__account-item" })
+            }
+            else
+            {
+                @Html.ActionLink("Sign in", "login", "Account", new { @class = "header__account-item" })
+                @Html.ActionLink("Sign up", "register", "Account", new { @class = "header__account-item" })
+            }
+        </span>
     </div>
     <div class="container body-content">
         @RenderBody()

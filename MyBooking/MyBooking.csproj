@@ -173,6 +173,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\MyBooking20171124123833 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\MyBookingFCS - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\MyBookingSBS - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\website20171124115559 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -51,3 +51,5 @@ C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csproj.CoreC
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.dll
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.pdb
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csprojResolveAssemblyReference.cache
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.Migrations.MigrateDB.resources
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csproj.GenerateResource.Cache

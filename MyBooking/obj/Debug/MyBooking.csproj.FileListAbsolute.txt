@@ -53,3 +53,7 @@ C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.pdb
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csprojResolveAssemblyReference.cache
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.Migrations.MigrateDB.resources
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csproj.GenerateResource.Cache
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Lucene.Net.dll
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Lucene.Net.pdb
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Lucene.Net.xml

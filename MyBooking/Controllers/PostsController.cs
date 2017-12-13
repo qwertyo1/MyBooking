@@ -1,4 +1,11 @@
-﻿using MyBooking.Models;
+﻿using Lucene.Net.Analysis.Standard;
+using Lucene.Net.Documents;
+using Lucene.Net.Index;
+using Lucene.Net.QueryParsers;
+using Lucene.Net.Search;
+using Lucene.Net.Store;
+using Version = Lucene.Net.Util.Version;
+using MyBooking.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,9 +23,11 @@ namespace MyBooking.Controllers
             List<Post> posts = null;
             using (PostContext db = new PostContext())
             {
+                LuceneSearch.AddUpdateLuceneIndex(db.Posts.ToList());
                 if (searchStr != null)
                 {
-                    posts = db.Posts.Where(p => p.Name.Contains(searchStr) || p.Content.Contains(searchStr) || p.UserName.Contains(searchStr)).ToList();
+                    //posts = db.Posts.Where(p => p.Name.Contains(searchStr) || p.Content.Contains(searchStr) || p.UserName.Contains(searchStr)).ToList();
+                    posts = LuceneSearch.Search(searchStr);
                 }
                 else
                 {

@@ -50,10 +50,15 @@ C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\ru\System.Web.WebPages.Razor
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csproj.CoreCompileInputs.cache
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.dll
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.pdb
-C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csprojResolveAssemblyReference.cache
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.Migrations.MigrateDB.resources
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csproj.GenerateResource.Cache
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\ICSharpCode.SharpZipLib.dll
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Lucene.Net.dll
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Lucene.Net.pdb
 C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Lucene.Net.xml
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Microsoft.Owin.dll
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Owin.dll
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Microsoft.Owin.xml
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\klipe\Source\Repos\MyBooking\MyBooking\obj\Debug\MyBooking.csprojResolveAssemblyReference.cache

@@ -1,11 +1,4 @@
-﻿using Lucene.Net.Analysis.Standard;
-using Lucene.Net.Documents;
-using Lucene.Net.Index;
-using Lucene.Net.QueryParsers;
-using Lucene.Net.Search;
-using Lucene.Net.Store;
-using Version = Lucene.Net.Util.Version;
-using MyBooking.Models;
+﻿using MyBooking.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,10 +16,9 @@ namespace MyBooking.Controllers
             List<Post> posts = null;
             using (PostContext db = new PostContext())
             {
-                LuceneSearch.AddUpdateLuceneIndex(db.Posts.ToList());
+                //LuceneSearch.AddUpdateLuceneIndex(db.Posts.ToList());
                 if (searchStr != null)
                 {
-                    //posts = db.Posts.Where(p => p.Name.Contains(searchStr) || p.Content.Contains(searchStr) || p.UserName.Contains(searchStr)).ToList();
                     posts = LuceneSearch.Search(searchStr);
                 }
                 else
@@ -81,8 +73,10 @@ namespace MyBooking.Controllers
                 {
                     using (PostContext db = new PostContext())
                     {
-                        db.Posts.Add(new Post { Name = model.Name, Content = model.Content, Price = model.Price, CreationDate = currentDate, UserName = User.Identity.Name, Image = model.Image});
+                        Post curPost = new Post { Name = model.Name, Content = model.Content, Price = model.Price, CreationDate = currentDate, UserName = User.Identity.Name, Image = model.Image };
+                        db.Posts.Add(curPost);
                         db.SaveChanges();
+                        LuceneSearch.AddUpdateLuceneIndex(curPost);
                         post = db.Posts.Where(p => p.Name == model.Name).FirstOrDefault();
                     }
                     if (post != null)
